@@ -3,7 +3,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import Select
 import time
 
-def reg_user (driver):
+def reg_user (driver): #Registration of new user
     driver.get("https://qa-practice.netlify.app/register")
     driver.find_element(By.ID, "first-name").send_keys("Nuraini")
     driver.find_element(By.ID, "last-name").send_keys("Razali")
@@ -19,24 +19,24 @@ def reg_user (driver):
     driver.find_element(By.CSS_SELECTOR, "button[type='registerBtn']").click()
     time.sleep(2)
 
-def login_user (driver):
+def login_user (driver): #Login new user account
     driver.get("https://qa-practice.netlify.app/auth_ecommerce")
     driver.find_element(By.ID, "email").send_keys("nuraini.razali@gmail.com")
     driver.find_element(By.ID, "password").send_keys("Test1234")
     driver.find_element(By.CSS_SELECTOR, "button[type='submitLoginBtn']").click()
     time.sleep(2)
 
-def add_product_to_cart(driver):
+def add_product_to_cart(driver): #Add product to cart
     driver.get("https://qa-practice.netlify.app/auth_ecommerce")
     driver.find_element(By.CLASS_NAME, "btn btn-primary-shop-item-button").click()
     time.sleep(2)
 
-def checkout(driver):
+def checkout(driver): #Checkout product in cart
     driver.get("https://qa-practice.netlify.app/auth_ecommerce")
     driver.find_element(By.CLASS_NAME, "btn-btn-primary-btn-purchase").click()
     time.sleep(2)
 
-def logout_user(driver):
+def logout_user(driver): #Logout from the systems
     driver.find_element(By.LINK_TEXT, "Logout").click()
     time.sleep(2)
 
